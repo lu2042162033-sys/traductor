@@ -1,0 +1,17 @@
+name = "traductor-api"
+main = "worker/src/index.ts"
+compatibility_date = "2026-11-25"
+
+[vars]
+ALLOWED_ORIGINS = "https://*.github.io,http://localhost:5173,http://127.0.0.1:5173"
+DAILY_GLOBAL_LIMIT = "600"
+DAILY_IP_LIMIT = "120"
+MAX_CONCURRENT_PER_IP = "2"
+
+[[durable_objects.bindings]]
+name = "QUOTA"
+class_name = "QuotaStore"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["QuotaStore"]
