@@ -69,10 +69,10 @@ npm run dev
    npm run worker:deploy
    ```
 
-3. 保存 DeepSeek Key。不要把 Key 写入仓库或 `.env` 后提交：
+3. 保存 DeepSeek Key。命令会在终端中安全提示输入，不要把 Key 写入仓库或 `.env` 后提交：
 
    ```bash
-   npx wrangler secret put DEEPSEEK_API_KEY
+   npm run worker:set-key
    ```
 
 4. 部署 Wrangler 会输出 `https://traductor-api.<account>.workers.dev`。将该地址设置为 GitHub 仓库变量 `VITE_WORKER_URL`。
